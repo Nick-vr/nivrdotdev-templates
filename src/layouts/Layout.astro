@@ -1,0 +1,32 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+// import '../styles/global.scss'
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-nivr.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,400&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <!-- <Header /> -->
+    <main>
+      <slot />
+    </main>
+    <!-- <Footer /> -->
+  </body>
+</html>
