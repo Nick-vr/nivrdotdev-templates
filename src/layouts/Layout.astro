@@ -1,13 +1,9 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
-<<<<<<< HEAD
 
 import Header from '@/components/Header.astro'
 
 import '../styles/global.css'
-=======
-// import '../styles/global.scss'
->>>>>>> b8e115a0b4dea745839773633e28040f90f992d0
 
 const { title } = Astro.props
 ---
@@ -30,7 +26,7 @@ const { title } = Astro.props
     <ViewTransitions />
   </head>
   <body>
-    <!-- <Header /> -->
+    <Header />
     <main>
       <slot />
     </main>
