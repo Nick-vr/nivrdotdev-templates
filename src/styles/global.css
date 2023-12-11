@@ -1,0 +1,114 @@
+:root {
+  --white: #f7f5ee;
+  --primary-dark: #18171a;
+  --secondary-dark: #4e4e4f;
+  --tertiery-dark: rgba(24, 23, 26, 0.5);
+  --tertiery-dark-lighter: rgba(24, 23, 26, 0.3);
+  --primary-light: #f1f0df;
+  --primary-yellow: #e1cf08;
+  --secondary-yellow: #f9e5ad;
+
+  --button-font-size: 1.2rem;
+  --overflow: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  /* overflow-x: hidden; */
+  overflow-y: var(--overflow);
+  font-family: 'DM Sans', sans-serif;
+  /* /font-family: 'Allison', cursive; */
+  background-color: var(--white);
+  color: var(--primary-dark);
+  max-width: 100vw;
+  font-size: 16px;
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
+
+  /* SCROLLBAR */
+  scrollbar-width: thin;
+  scrollbar-color: #aaa7a7 #222;
+  scroll-behavior: smooth !important;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #222;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #aaa7a7;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #aaa7a7;
+  }
+}
+
+body {
+  min-height: 100vh; /* Set a minimum height to ensure the footer is at the bottom. */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  /* background-color: lightgreen; */
+  flex: 1;
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  grid-gap: 10px;
+  @media (max-width: 1230px) {
+    grid-template-columns: 50px auto 50px;
+  }
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
