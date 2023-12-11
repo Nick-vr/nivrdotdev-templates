@@ -1,9 +1,13 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
+<<<<<<< HEAD
 
 import Header from '@/components/Header.astro'
 
 import '../styles/global.css'
+=======
+// import '../styles/global.scss'
+>>>>>>> b8e115a0b4dea745839773633e28040f90f992d0
 
 const { title } = Astro.props
 ---
@@ -18,7 +22,7 @@ const { title } = Astro.props
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Allison&family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,400&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
@@ -26,9 +30,10 @@ const { title } = Astro.props
     <ViewTransitions />
   </head>
   <body>
-    <Header />
+    <!-- <Header /> -->
     <main>
       <slot />
     </main>
+    <!-- <Footer /> -->
   </body>
 </html>
