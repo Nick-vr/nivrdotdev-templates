@@ -1,0 +1,32 @@
+---
+const currentDate = () => new Date().getFullYear()
+const currentPath = Astro.url.pathname
+---
+
+<footer>
+  <div>
+    <span>&#169;{currentDate}</span>
+    <span
+      >templates.<a href="https://www.nivr.dev" target="_blank" rel="noreferer">nivr.dev</a></span
+    >
+  </div>
+</footer>
+
+<style lang="postcss">
+  footer {
+    background-color: var(--primary-light);
+    text-align: center;
+
+    div {
+      margin: 10px 0;
+
+      span {
+        font-size: .9rem;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>
