@@ -1,14 +1,11 @@
 ---
-const {} = Astro.props
+import Layout from './Layout.astro'
+
+const { frontmatter } = Astro.props
+const { title, hero } = frontmatter
 ---
 
-<html lang="nl">
-  <head> </head>
-
-  <body>
-    <head>Head</head>
-    <main>
-      <slot />
-    </main>
-  </body>
-</html>
+<Layout>
+  <img src={hero} alt="" />
+  <h1>{title}</h1>
+</Layout>

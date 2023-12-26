@@ -1,9 +1,26 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+
+interface MarkdownFrontmatter {
+  title: string
+  description: string
+  date: string
+  tags: string[]
+  image: string
+}
+
+let allTemplates = await Astro.glob<MarkdownFrontmatter>('./templates/*.md')
 ---
 
 <Layout>
-  <p>index</p>
+  <h2>Templates</h2>
+  {
+    allTemplates.map((template) => (
+      <div>
+        <a href={template.url}>{template.frontmatter.title}</a>
+      </div>
+    ))
+  }
 </Layout>
 
 <style lang="postcss">
