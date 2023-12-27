@@ -1,0 +1,12 @@
+---
+const { template } = Astro.props
+const { title, description } = template.frontmatter
+---
+
+<div class="card">
+  <a href={template.url}>
+    <div class="card-image"></div>
+    <h3>{title}</h3>
+    <span class="descrition">{description}</span>
+  </a>
+</div>

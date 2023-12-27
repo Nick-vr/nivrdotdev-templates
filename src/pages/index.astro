@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import Card from '@/components/Card.astro'
 
 interface MarkdownFrontmatter {
   title: string
@@ -13,16 +14,79 @@ let allTemplates = await Astro.glob<MarkdownFrontmatter>('./templates/*.md')
 ---
 
 <Layout>
-  <h2>Templates</h2>
-  {
-    allTemplates.map((template) => (
-      <div>
-        <a href={template.url}>{template.frontmatter.title}</a>
-      </div>
-    ))
-  }
+  <div class="hero">
+    <h2>Templates</h2>
+  </div>
+  {allTemplates.map((template) => <Card {template} />)}
 </Layout>
 
 <style lang="postcss">
-
+  .hero {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 300px;
+    background-color: #18171a;
+    opacity: 1;
+    background-image: linear-gradient(
+        30deg,
+        #333333 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #333333 87.5%,
+        #333333
+      ),
+      linear-gradient(
+        150deg,
+        #333333 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #333333 87.5%,
+        #333333
+      ),
+      linear-gradient(
+        30deg,
+        #333333 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #333333 87.5%,
+        #333333
+      ),
+      linear-gradient(
+        150deg,
+        #333333 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #333333 87.5%,
+        #333333
+      ),
+      linear-gradient(
+        60deg,
+        #33333377 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #33333377 75%,
+        #33333377
+      ),
+      linear-gradient(
+        60deg,
+        #33333377 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #33333377 75%,
+        #33333377
+      );
+    background-size: 80px 140px;
+    background-position:
+      0 0,
+      0 0,
+      40px 70px,
+      40px 70px,
+      0 0,
+      40px 70px;
+    h2 {
+      color: var(--white);
+      font-weight: lighter;
+    }
+  }
 </style>
