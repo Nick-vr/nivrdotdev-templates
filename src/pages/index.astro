@@ -14,79 +14,47 @@ let allTemplates = await Astro.glob<MarkdownFrontmatter>('./templates/*.md')
 ---
 
 <Layout>
-  <div class="hero">
-    <h2>Templates</h2>
-  </div>
-  {allTemplates.map((template) => <Card {template} />)}
+  <header>
+    <h2>Maak je keuze!</h2>
+  </header>
+  <div class="hero"></div>
+  <section>
+    {allTemplates.map((template) => <Card {template} />)}
+  </section>
 </Layout>
 
-<style lang="postcss">
+<style  lang="postcss">
+  header {
+    z-index: 1;
+    width: 100vw;
+    height: 150px;
+    h2 {
+      text-align: center;
+      color: var(--primary-dark);
+      font-weight: lighter;
+    }
+  }
   .hero {
+    box-shadow: 0px 11px 20px 17px rgba(24,23,26,0.45) inset,
+0px 25px 20px -20px rgba(0,0,0,0.45);
+    z-index: 0;
+    position: absolute;
+    top: 80px;
     display: grid;
     place-items: center;
     width: 100vw;
-    height: 300px;
-    background-color: #18171a;
-    opacity: 1;
-    background-image: linear-gradient(
-        30deg,
-        #333333 12%,
-        transparent 12.5%,
-        transparent 87%,
-        #333333 87.5%,
-        #333333
-      ),
-      linear-gradient(
-        150deg,
-        #333333 12%,
-        transparent 12.5%,
-        transparent 87%,
-        #333333 87.5%,
-        #333333
-      ),
-      linear-gradient(
-        30deg,
-        #333333 12%,
-        transparent 12.5%,
-        transparent 87%,
-        #333333 87.5%,
-        #333333
-      ),
-      linear-gradient(
-        150deg,
-        #333333 12%,
-        transparent 12.5%,
-        transparent 87%,
-        #333333 87.5%,
-        #333333
-      ),
-      linear-gradient(
-        60deg,
-        #33333377 25%,
-        transparent 25.5%,
-        transparent 75%,
-        #33333377 75%,
-        #33333377
-      ),
-      linear-gradient(
-        60deg,
-        #33333377 25%,
-        transparent 25.5%,
-        transparent 75%,
-        #33333377 75%,
-        #33333377
-      );
-    background-size: 80px 140px;
-    background-position:
-      0 0,
-      0 0,
-      40px 70px,
-      40px 70px,
-      0 0,
-      40px 70px;
-    h2 {
-      color: var(--white);
-      font-weight: lighter;
-    }
+    height: 150px;
+    background-color: #f7f5ee;
+    opacity: 0.1;
+    background-image: linear-gradient(#18171a 1px, transparent 1px),
+      linear-gradient(to right, #18171a 1px, #f7f5ee 1px);
+    background-size: 20px 20px;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    /* padding: 1rem; */
   }
 </style>

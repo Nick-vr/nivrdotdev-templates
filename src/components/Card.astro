@@ -1,12 +1,32 @@
 ---
 const { template } = Astro.props
-const { title, description } = template.frontmatter
+const { title, description, hero } = template.frontmatter
 ---
 
-<div class="card">
+<article>
   <a href={template.url}>
-    <div class="card-image"></div>
+    <img src={hero} alt="Voorbeeld van de template." />
     <h3>{title}</h3>
     <span class="descrition">{description}</span>
   </a>
-</div>
+</article>
+
+<style lang="postcss">
+  article {
+    background-color: var(--primary-light);
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+</style>
